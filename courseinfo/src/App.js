@@ -6,18 +6,19 @@ const Header = (props) => {
   )
 } 
 
-const Content = (props) => {
+const Part = (props) => {
+  console.log('Entered Part component');
   return (
-    <div>
-      <p>{props.parts}</p>
-    </div>
+  <div>
+    <p>{props.partName} {props.numExercises}</p>
+  </div>
   );
 }
 
-const Total = (props) => {
-  return(
+const Content = (props) => {
+  return (
     <div>
-      <p>{props.totals}</p>
+      <Part partName = {props.parts[props.index]} numExercises = {props.totals[props.index]} />
     </div>
   );
 }
@@ -30,13 +31,16 @@ const App = () => {
   const exercises2 = 7;
   const part3 = 'State of a component';
   const exercises3 = 14;
-  const parts = [part1, ', ', part2, ', ', part3];
-  const totals = [exercises1, ', ', exercises2, ', ', exercises3, ', ', exercises1+exercises2+exercises3];
+  const parts = [part1, part2, part3];
+  const totals = [exercises1, exercises2, exercises3, exercises1+exercises2+exercises3];
+  const contentComponents = [];
+  for (let i =0; i < 3; i++){
+    contentComponents.push(<Content parts={parts} totals={totals} index={i} />)
+  }
   return (
     <div>
       <Header course={course} />
-      <Content parts={parts} />
-      <Total totals = {totals} />
+      {contentComponents}
     </div>
   );
 }
