@@ -29,9 +29,8 @@ const Statistics = (props) => {
       average = props.score / props.numResponses;
     }
     return (
-    <p>
-      Average: {average}
-    </p>)}
+      <>{average}</>
+      )}
 
   const displayStats = (props) => {
 
@@ -39,9 +38,9 @@ const Statistics = (props) => {
       return(
       <>
         <StatisticsLine text = 'Good' value = {props.good} />
-        <p>Neutral: {props.neutral}</p>
-        <p>Bad: {props.bad}</p>
-        {calcAverage(props)}
+        <StatisticsLine text = 'Neutral' value = {props.neutral} />
+        <StatisticsLine text = 'Bad' value = {props.bad} />
+        <StatisticsLine text = 'Average' value = {calcAverage(props)} />
         {calcPercentPositive(props)}
       </>
       )
