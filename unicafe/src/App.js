@@ -67,12 +67,13 @@ const App = () => {
   return (
     <div>
       <h1>Leave Feedback</h1>
-      <Statistics good = {good} neutral = {neutral} bad = {bad} score = {score }numResponses={numResponses} />
+      
       <div>
         <button onClick = {handleGood}> Good </button>
         <button onClick = {handleBad}> Bad </button>
         <button onClick = {handleNeutral}> Neutral </button>
       </div>
+      <Statistics good = {good} neutral = {neutral} bad = {bad} score = {score }numResponses={numResponses} />
       {/* 
       <h2> Statistics </h2>
       <p>Good {good}</p>
