@@ -19,7 +19,7 @@ const Statistics = (props) => {
       percentPositive = props.good / props.numResponses * 100;
     }
     return(
-      <p> Percent positive: {percentPositive}</p>
+      <>{percentPositive}</>
     )
   }
 
@@ -41,7 +41,7 @@ const Statistics = (props) => {
         <StatisticsLine text = 'Neutral' value = {props.neutral} />
         <StatisticsLine text = 'Bad' value = {props.bad} />
         <StatisticsLine text = 'Average' value = {calcAverage(props)} />
-        {calcPercentPositive(props)}
+        <StatisticsLine text = 'Percent positive' value = {calcPercentPositive(props)}/>
       </>
       )
     }
