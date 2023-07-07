@@ -1,5 +1,9 @@
 import { useState } from 'react'
 
+const StatisticsLine = (props) => {
+  return (<p>{props.text}: {props.value}</p>)
+}
+
 const Button = (props) => {
   return(
     <>
@@ -34,7 +38,7 @@ const Statistics = (props) => {
     if ((props.good + props.bad + props.neutral)>0) {
       return(
       <>
-        <p>Good: {props.good}</p>
+        <StatisticsLine text = 'Good' value = {props.good} />
         <p>Neutral: {props.neutral}</p>
         <p>Bad: {props.bad}</p>
         {calcAverage(props)}
