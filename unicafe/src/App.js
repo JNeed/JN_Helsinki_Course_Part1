@@ -13,6 +13,16 @@ const Statistics = (props) => {
     )
   }
 
+  const calcAverage = (props) => {
+    let average = 0;
+    if (props.numResponses > 0) {
+      average = props.score / props.numResponses;
+    }
+    return (
+    <p>
+      Average: {average}
+    </p>)}
+
   return (
     <>
     <h1>Statistics</h1>
@@ -20,6 +30,7 @@ const Statistics = (props) => {
       <p>Good: {props.good}</p>
       <p>Neutral: {props.neutral}</p>
       <p>Bad: {props.bad}</p>
+      {calcAverage(props)}
       {calcPercentPositive(props)}
     </div>
     </>
@@ -50,15 +61,7 @@ const App = () => {
     setNumResponses(numResponses + 1)
   }
 
-  const calcAverage = () => {
-    let average = 0;
-    if (numResponses > 0) {
-      average = score / numResponses;
-    }
-    return (
-    <p>
-      Average: {average}
-    </p>)}
+
 
 
   return (
