@@ -37,11 +37,12 @@ const Statistics = (props) => {
     if ((props.good + props.bad + props.neutral)>0) {
       return(
       <>
-        <StatisticsLine text = 'Good' value = {props.good} />
-        <StatisticsLine text = 'Neutral' value = {props.neutral} />
-        <StatisticsLine text = 'Bad' value = {props.bad} />
-        <StatisticsLine text = 'Average' value = {calcAverage(props)} />
-        <StatisticsLine text = 'Percent positive' value = {calcPercentPositive(props)}/>
+        <h2>Statistics</h2>
+          <StatisticsLine text = 'Good' value = {props.good} />
+          <StatisticsLine text = 'Neutral' value = {props.neutral} />
+          <StatisticsLine text = 'Bad' value = {props.bad} />
+          <StatisticsLine text = 'Average' value = {calcAverage(props)} />
+          <StatisticsLine text = 'Percent positive' value = {calcPercentPositive(props)}/>
       </>
       )
     }
