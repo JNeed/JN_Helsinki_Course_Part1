@@ -31,8 +31,8 @@ const App = () => {
       <p>{anecdotes[selected]}</p>
       <p>Has {votes[selected]} votes</p>
       <div>
-        <button onClick = {()=>setSelected(Math.floor(Math.random()*anecdotesState.length))}>next anecdote</button>
         <button onClick = {incrementVote}>vote</button>
+        <button onClick = {()=>setSelected(Math.floor(Math.random()*anecdotesState.length))}>next anecdote</button>
         {/* <button onClick = {()=> console.log(votes)}>Print votes to console</button> */}
       </div>
     </div>
